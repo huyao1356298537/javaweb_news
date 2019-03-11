@@ -1,0 +1,139 @@
+a{
+    color: black !important;
+}
+
+.link{
+    margin-top:8px;
+    border: 1px solid #E5E5E5;
+}
+
+.link .linkHeader{
+    border-bottom: 1px solid #E5E5E5;
+    padding: 3px 10px 3px;
+    font-weight: bold;
+}
+
+.link .datas{
+    padding: 5px;
+    height: 50px;
+}
+
+.link .datas ul{
+    list-style-type: none;
+}
+
+.link .datas ul li{
+    float: left;
+    margin-left: 15px;
+    margin: 5px 0px 15px 15px;
+}
+.foot{
+    text-align: center;
+    margin-top:18px;
+    margin-bottom: 18px;
+}
+
+#myCarousel {
+    width: 345px;
+    height: 228px;
+    overflow: hidden;
+}
+
+.text-caption {
+    color: red;
+    position: absolute;
+    left: 100px;
+    top: 150px;
+    margin: 0 auto;
+    font-weight: bold;
+}
+#myCarousel a{
+    color: #fff !important;
+}
+
+.newsHeader_list {
+    border: 1px solid #E5E5E5;
+    padding: 0px 0px 0px 0px;
+    height: 228px;
+    margin-left: 360px;
+    margin-top: -228px;
+}
+
+.newsHeader_list .newsHeader {
+    height: 80px;
+    text-align: center;
+    padding: 0px;
+}
+
+.newsHeader_list .newsHeader h3 {
+    margin: 5px auto 5px auto;
+}
+
+.newsHeader_list .newsHeader h3 a {
+    font-size: 25px;
+}
+
+.newsHeader_list .newsHeader p {
+    padding: 0px 5px 0px 5px;
+}
+
+.newsHeader_list .currentUpdate {
+    height: 140px;
+    margin: 15px 0px 5px 0px;
+}
+
+.currentUpdate .currentUpdateHeader {
+    margin: 0px;
+    padding: 3px 10px 3px;
+    border-top: 1px solid #E5E5E5;
+    border-bottom: 1px solid #E5E5E5;
+    font-weight: bold;
+}
+
+.currentUpdate .currentUpdateDatas {
+    margin: 10px;
+}
+
+.currentUpdate .currentUpdateDatas a {
+    font-size: 13px;
+}
+
+.data_list {
+    border: 1px solid #E5E5E5;
+    padding: 0px;
+}
+
+.data_list .dataHeader {
+    border-bottom: 1px solid #E5E5E5;
+    padding: 3px 10px 3px;
+    font-weight: bold;
+}
+
+.data_list .dataHeader .more {
+    float: right;
+    text-decoration: none;
+}
+
+.data_list .datas {
+    padding: 5px;
+}
+
+.data_list .datas a {
+    font-size: 13px;
+}
+
+.data_list .datas ul {
+    list-style-type: square;
+}
+
+.data_list .datas ul li {
+    margin-top: 3px;
+}
+
+.hotspot_news_list {
+    height: 228px;
+}
+.news_list {
+    height: 240px;
+    margin: 15px 0px 8px 0px;
+}
