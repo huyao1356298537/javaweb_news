@@ -1,4 +1,9 @@
-<%--
+<%@ page import="com.zr.news.service.NewsService" %>
+<%@ page import="com.zr.news.entity.News" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.zr.news.service.NewsTypeService" %>
+<%@ page import="com.zr.news.entity.NewsType" %>
+<%@ page import="com.zr.news.util.DateUtil" %><%--
   Created by IntelliJ IDEA.
   User: Administrator
   Date: 2019/3/8
@@ -20,215 +25,56 @@
 <div class="container">
     <%--  动态引入文件  --%>
         <jsp:include page="foreground/commons/header.jsp"></jsp:include>
-        <jsp:include page="foreground/commons/banner.jsp"></jsp:include>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="data_list news_list">
-                <div class="dataHeader">娱乐新闻1<span class="more"><a href="news?action=list&typeId=1">更多...</a></span></div>
-                <div class="datas">
-                    <ul>
-                        <li>03-14&nbsp;
-                            <a href="news?action=show&newsId=104" title="香港少女穿热裤短裙便利店偷零食被捕2">香港少女穿热裤短裙便利店偷零食被捕2</a>
-                        </li>
-                        <li>03-13&nbsp;
-                            <a href="news?action=show&newsId=64" title="娱乐新闻3">娱乐新闻3</a>
-                        </li>
-                        <li>03-13&nbsp;
-                            <a href="news?action=show&newsId=65" title="娱乐新闻4">娱乐新闻4</a>
-                        </li>
-                        <li>03-13&nbsp;
-                            <a href="news?action=show&newsId=66" title="娱乐新闻5">娱乐新闻5</a>
-                        </li>
-                        <li>03-13&nbsp;
-                            <a href="news?action=show&newsId=67" title="娱乐新闻6">娱乐新闻6</a>
-                        </li>
-                        <li>03-13&nbsp;
-                            <a href="news?action=show&newsId=68" title="娱乐新闻7">娱乐新闻7</a>
-                        </li>
-                        <li>03-13&nbsp;
-                            <a href="news?action=show&newsId=69" title="娱乐新闻8">娱乐新闻8</a>
-                        </li>
-                        <li>03-13&nbsp;
-                            <a href="news?action=show&newsId=53" title="娱乐新闻2">娱乐新闻2</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+        <jsp:include page="foreground/banner.jsp"></jsp:include>
 
-        </div>
-        <div class="col-md-4">
-            <div class="data_list news_list">
-                <div class="dataHeader">娱乐新闻2<span class="more"><a href="news?action=list&typeId=1">更多...</a></span></div>
-                <div class="datas">
-                    <ul>
-                        <li>03-14&nbsp;
-                            <a href="news?action=show&newsId=104" title="香港少女穿热裤短裙便利店偷零食被捕2">香港少女穿热裤短裙便利店偷零食被捕2</a>
-                        </li>
-                        <li>03-13&nbsp;
-                            <a href="news?action=show&newsId=64" title="娱乐新闻3">娱乐新闻3</a>
-                        </li>
-                        <li>03-13&nbsp;
-                            <a href="news?action=show&newsId=65" title="娱乐新闻4">娱乐新闻4</a>
-                        </li>
-                        <li>03-13&nbsp;
-                            <a href="news?action=show&newsId=66" title="娱乐新闻5">娱乐新闻5</a>
-                        </li>
-                        <li>03-13&nbsp;
-                            <a href="news?action=show&newsId=67" title="娱乐新闻6">娱乐新闻6</a>
-                        </li>
-                        <li>03-13&nbsp;
-                            <a href="news?action=show&newsId=68" title="娱乐新闻7">娱乐新闻7</a>
-                        </li>
-                        <li>03-13&nbsp;
-                            <a href="news?action=show&newsId=69" title="娱乐新闻8">娱乐新闻8</a>
-                        </li>
-                        <li>03-13&nbsp;
-                            <a href="news?action=show&newsId=53" title="娱乐新闻2">娱乐新闻2</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+        <%
+       NewsService service = new NewsService();
+       NewsTypeService typeService = new NewsTypeService();
 
-        </div>
-        <div class="col-md-4">
-            <div class="data_list news_list">
-                <div class="dataHeader">娱乐新闻3<span class="more"><a href="news?action=list&typeId=1">更多...</a></span></div>
-                <div class="datas">
-                    <ul>
-                        <li>03-14&nbsp;
-                            <a href="news?action=show&newsId=104" title="香港少女穿热裤短裙便利店偷零食被捕2">香港少女穿热裤短裙便利店偷零食被捕2</a>
-                        </li>
-                        <li>03-13&nbsp;
-                            <a href="news?action=show&newsId=64" title="娱乐新闻3">娱乐新闻3</a>
-                        </li>
-                        <li>03-13&nbsp;
-                            <a href="news?action=show&newsId=65" title="娱乐新闻4">娱乐新闻4</a>
-                        </li>
-                        <li>03-13&nbsp;
-                            <a href="news?action=show&newsId=66" title="娱乐新闻5">娱乐新闻5</a>
-                        </li>
-                        <li>03-13&nbsp;
-                            <a href="news?action=show&newsId=67" title="娱乐新闻6">娱乐新闻6</a>
-                        </li>
-                        <li>03-13&nbsp;
-                            <a href="news?action=show&newsId=68" title="娱乐新闻7">娱乐新闻7</a>
-                        </li>
-                        <li>03-13&nbsp;
-                            <a href="news?action=show&newsId=69" title="娱乐新闻8">娱乐新闻8</a>
-                        </li>
-                        <li>03-13&nbsp;
-                            <a href="news?action=show&newsId=53" title="娱乐新闻2">娱乐新闻2</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+        List<NewsType> typeList = typeService.findAll();
+        List<List<News>> newsByType = service.findNewsByType();
+       for (int i = 0; i < newsByType.size(); i++) {
+            // 行开始
+           if(i%3==0){
+        %>
         <div class="row">
+        <%
+           }
+        %>
             <div class="col-md-4">
                 <div class="data_list news_list">
-                    <div class="dataHeader">娱乐新闻<span class="more"><a href="news?action=list&typeId=1">更多...</a></span></div>
+                    <div class="dataHeader"><%=typeList.get(i).getTypeName()%><span class="more"><a href="#?<%=typeList.get(i).getTypeId()%>">更多...</a></span></div>
                     <div class="datas">
                         <ul>
-                            <li>03-14&nbsp;
-                                <a href="news?action=show&newsId=104" title="香港少女穿热裤短裙便利店偷零食被捕2">香港少女穿热裤短裙便利店偷零食被捕2</a>
+                            <%
+                                List<News> newsList = newsByType.get(i);
+                                if(newsList.get(0).getTypeId()==typeList.get(i).getTypeId())
+                                    for (News news:newsList) {
+                                        String date = DateUtil.formatDate(news.getPublishDate(), "yyyy-MM-dd");
+                                        String title = news.getTitle().length() >= 10 ? news.getTitle().substring(0, 10) + "..." : news.getTitle();
+                            %>
+                            <li>
+                                <a href="#?<%=news.getNewsId()%>" title="<%=news.getTitle() %>">[<%=date %>]&nbsp; <%=title%></a>
                             </li>
-                            <li>03-13&nbsp;
-                                <a href="news?action=show&newsId=64" title="娱乐新闻3">娱乐新闻3</a>
-                            </li>
-                            <li>03-13&nbsp;
-                                <a href="news?action=show&newsId=65" title="娱乐新闻4">娱乐新闻4</a>
-                            </li>
-                            <li>03-13&nbsp;
-                                <a href="news?action=show&newsId=66" title="娱乐新闻5">娱乐新闻5</a>
-                            </li>
-                            <li>03-13&nbsp;
-                                <a href="news?action=show&newsId=67" title="娱乐新闻6">娱乐新闻6</a>
-                            </li>
-                            <li>03-13&nbsp;
-                                <a href="news?action=show&newsId=68" title="娱乐新闻7">娱乐新闻7</a>
-                            </li>
-                            <li>03-13&nbsp;
-                                <a href="news?action=show&newsId=69" title="娱乐新闻8">娱乐新闻8</a>
-                            </li>
-                            <li>03-13&nbsp;
-                                <a href="news?action=show&newsId=53" title="娱乐新闻2">娱乐新闻2</a>
-                            </li>
+                            <%
+                                    }
+                            %>
+
                         </ul>
                     </div>
                 </div>
 
             </div>
-            <div class="col-md-4">
-                <div class="data_list news_list">
-                    <div class="dataHeader">娱乐新闻<span class="more"><a href="news?action=list&typeId=1">更多...</a></span></div>
-                    <div class="datas">
-                        <ul>
-                            <li>03-14&nbsp;
-                                <a href="news?action=show&newsId=104" title="香港少女穿热裤短裙便利店偷零食被捕2">香港少女穿热裤短裙便利店偷零食被捕2</a>
-                            </li>
-                            <li>03-13&nbsp;
-                                <a href="news?action=show&newsId=64" title="娱乐新闻3">娱乐新闻3</a>
-                            </li>
-                            <li>03-13&nbsp;
-                                <a href="news?action=show&newsId=65" title="娱乐新闻4">娱乐新闻4</a>
-                            </li>
-                            <li>03-13&nbsp;
-                                <a href="news?action=show&newsId=66" title="娱乐新闻5">娱乐新闻5</a>
-                            </li>
-                            <li>03-13&nbsp;
-                                <a href="news?action=show&newsId=67" title="娱乐新闻6">娱乐新闻6</a>
-                            </li>
-                            <li>03-13&nbsp;
-                                <a href="news?action=show&newsId=68" title="娱乐新闻7">娱乐新闻7</a>
-                            </li>
-                            <li>03-13&nbsp;
-                                <a href="news?action=show&newsId=69" title="娱乐新闻8">娱乐新闻8</a>
-                            </li>
-                            <li>03-13&nbsp;
-                                <a href="news?action=show&newsId=53" title="娱乐新闻2">娱乐新闻2</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
 
-            </div>
-            <div class="col-md-4">
-                <div class="data_list news_list">
-                    <div class="dataHeader">娱乐新闻<span class="more"><a href="news?action=list&typeId=1">更多...</a></span></div>
-                    <div class="datas">
-                        <ul>
-                            <li>03-14&nbsp;
-                                <a href="news?action=show&newsId=104" title="香港少女穿热裤短裙便利店偷零食被捕2">香港少女穿热裤短裙便利店偷零食被捕2</a>
-                            </li>
-                            <li>03-13&nbsp;
-                                <a href="news?action=show&newsId=64" title="娱乐新闻3">娱乐新闻3</a>
-                            </li>
-                            <li>03-13&nbsp;
-                                <a href="news?action=show&newsId=65" title="娱乐新闻4">娱乐新闻4</a>
-                            </li>
-                            <li>03-13&nbsp;
-                                <a href="news?action=show&newsId=66" title="娱乐新闻5">娱乐新闻5</a>
-                            </li>
-                            <li>03-13&nbsp;
-                                <a href="news?action=show&newsId=67" title="娱乐新闻6">娱乐新闻6</a>
-                            </li>
-                            <li>03-13&nbsp;
-                                <a href="news?action=show&newsId=68" title="娱乐新闻7">娱乐新闻7</a>
-                            </li>
-                            <li>03-13&nbsp;
-                                <a href="news?action=show&newsId=69" title="娱乐新闻8">娱乐新闻8</a>
-                            </li>
-                            <li>03-13&nbsp;
-                                <a href="news?action=show&newsId=53" title="娱乐新闻2">娱乐新闻2</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        <%
+           // 行结束
+           if(i%3==2 || i==newsByType.size()-1){
+            %>
         </div>
-
-
+            <%
+           }
+         }
+        %>
 
     <jsp:include page="foreground/commons/link.jsp"></jsp:include>
     <jsp:include page="foreground/commons/footer.jsp"></jsp:include>
