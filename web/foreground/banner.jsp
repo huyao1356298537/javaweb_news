@@ -2,6 +2,8 @@
 <%@ page import="com.zr.news.entity.News" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <div class="row">
     <div class="col-md-9">
         <!-- Carousel  start -->
@@ -16,41 +18,26 @@
             <!-- 轮播（Carousel）项目 -->
             <div class="carousel-inner" >
                 <%--<div class="item active">
-                    <a href="#1"><img style="overflow: hidden;" src="<%=request.getContextPath() %>/newsImg/1.jpg" alt="First slide"
+                    <a href="#1"><img style="overflow: hidden;" src="<%=request.getContextPath}/newsImg/1.jpg" alt="First slide"
                                       title="标题 1"></a>
                     <div class="text-caption">标题 1</div>
                 </div>--%>
-                <%
-                    NewsService service = new NewsService();
-                    List<News> imglist = service.findImageNews();
-//                        for (News news : imglist) {
-                        for (int i = 0; i < imglist.size(); i++) {
-                        if(i==0){
-
-
-                    %>
-                     <div class="item active">
-                    <a href="#<%=imglist.get(i).getNewsId()%>"><img src="<%=request.getContextPath() %>/newsImg/<%=imglist.get(i).getImageUrl()%>"
-                                      alt="<%=imglist.get(i).getTitle()%>"
-                                      title="<%=imglist.get(i).getTitle()%>"></a>
-                    <%--  <div class="text-caption"><%=news.getTitle()%></div>--%>
-                    </div>
-                    <%
-                        }else{
-                    %>
-
-                    <div class="item">
-                        <a href="#<%=imglist.get(i).getNewsId()%>"><img src="<%=request.getContextPath() %>/newsImg/<%=imglist.get(i).getImageUrl()%>"
-                                          alt="<%=imglist.get(i).getTitle()%>"
-                                          title="<%=imglist.get(i).getTitle()%>"></a>
-                      <%--  <div class="text-caption"><%=news.getTitle()%></div>--%>
-                    </div>
-
-                    <%
-                            }
-                        }
-                    %>
-
+                    <c:forEach var="imageNews" items="${imageNewsList}" varStatus="index">
+                        <c:if test="${index.first}">
+                            <div class="item active">
+                                <a href="NewsServlet?newsId=${imageNews.newsId}">
+                                    <img src="<%=request.getContextPath()%>/newsImg/${imageNews.imageUrl}"
+                                                            alt="${imageNews.title}"
+                                                            title="11${imageNews.title}"></a>
+                            </div>
+                        </c:if>
+                            <div class="item ">
+                                <a href="NewsServlet?newsId=${imageNews.newsId}">
+                                    <img src="<%=request.getContextPath()%>/newsImg/${imageNews.imageUrl}"
+                                         alt="${imageNews.title}"
+                                         title="22${imageNews.title}"></a>
+                            </div>
+                    </c:forEach>
             </div>
             <!-- 轮播（Carousel）导航 -->
             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -64,72 +51,47 @@
         </div>
         <!-- Carousel  end -->
         <div class="newsHeader_list">
-            <%
-                News headNews = service.findHeadNews();
-            %>
             <div class="newsHeader">
-                <h3><a href="#?<%=headNews.getNewsId() %>" title="<%=headNews.getTitle() %>">
-                    <%=headNews.getTitle().length()>=8?headNews.getTitle().substring(0,8)+"...":headNews.getTitle() %>
+                <h3><a href="#?${headNews.newsId}" title="${headNews.title}">
+                   ${fn:substring(headNews.title, 0, 8)}...
+
                 </a></h3>
-                <p>  <%=headNews.getContext()%> ...
-                    <a href="#?<%=headNews.getNewsId() %>">[查看全文]</a>
+                <p>   ${fn:substring(headNews.context, 0, 40)}...
+                    <a href="#?${headNews.newsId}">[查看全文]</a>
                 </p>
             </div>
             <div class="currentUpdate">
                 <div class="currentUpdateHeader">最近更新</div>
                 <div class="currentUpdateDatas">
                     <table width="100%">
-                        <%
-                            List<News> newNews = service.findNewNews();
-                            for (int i = 0; i <newNews.size() ; i++) {
-                                String title = newNews.get(i).getTitle().length() >= 8 ? newNews.get(i).getTitle().substring(0, 8) + "..." : newNews.get(i).getTitle();
-                                if(i%2==0){
-                                %>
+
+                            <c:forEach items="${newNewsList}" var="newNews" varStatus="i">
+                                <c:if test="${i.index%2==0}">
                                 <tr>
-                                <%
-                                 }
-                                %>
-
+                                </c:if>
                                 <td width="50%">
-                                    <a href="#?<%=newNews.get(i).getNewsId()%>" title="<%=title %>"><%=title %></a>
+                                    <a href="#?${newNews.newsId}" title="${newNews.title}">${fn:substring(newNews.title, 0, 12)}</a>
                                 </td>
-
-                                <%
-                                  if(i%2==1){
-                                %>
+                                <c:if test="${i.index%2==1}">
                                 </tr>
-                                <%
-                                 }
-                            }
-                        %>
-
+                                </c:if>
+                            </c:forEach>
                     </table>
                 </div>
             </div>
         </div>
     </div>
-
     <div class="col-md-3">
         <div class="data_list hotspot_news_list">
             <div class="dataHeader">热点新闻</div>
             <div class="datas">
                 <ul>
 
-                    <%
-                        List<News> hotNews = service.findHotNews();
-                        if(hotNews!=null)
-                            for (News news:hotNews) {
-                                String title =news.getTitle().length() >= 15 ? news.getTitle().substring(0, 15) + "..." : news.getTitle();
-
-                    %>
-
+                    <c:forEach items="${hotNewsList}" var="hotNews">
                     <li>
-                        <a href="#?<%=news.getNewsId() %>" title="<%=news.getTitle() %>"><%=title%></a>
+                        <a href="#?${hotNews.newsId}" title="${hotNews.title}" >${fn:substring(hotNews.title, 0, 15)}</a>
                     </li>
-                    <%
-                            }
-                    %>
-
+                    </c:forEach>
                 </ul>
             </div>
         </div>

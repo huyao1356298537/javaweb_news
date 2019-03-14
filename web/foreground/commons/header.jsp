@@ -1,10 +1,8 @@
-<%@ page import="com.zr.news.service.NewsTypeService" %>
-<%@ page import="com.zr.news.entity.NewsType" %>
-<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="row">
     <div class="col-md-8">
-        <a href="toIndex">
+        <a href="goIndex">
             <img src="<%=request.getContextPath() %>/static/img/logo.png" alt="天天新闻" />
         </a>
     </div>
@@ -16,21 +14,14 @@
             <div class="container">
                 <ul class="nav nav-pills">
                     <li class="active">
-                        <a href="#">首页</a>
+                        <a href="goIndex">首页</a>
                     </li>
-                   <%
-                       NewsTypeService service = new NewsTypeService();
-                       List<NewsType> list = service.findAll();
-                       if(list!=null){
-                           for (NewsType newsType:list) {
-                   %>
+
+                    <c:forEach var="type" items="${typeList}">
                     <li>
-                        <a href="#?<%=newsType.getTypeId() %>"><%=newsType.getTypeName() %></a>
+                        <a href="TypeServlet?id=${type.typeId}">${type.typeName}</a>
                     </li>
-                    <%
-                            }
-                        }
-                    %>
+                    </c:forEach>
                 </ul>
             </div>
         </nav>
