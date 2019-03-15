@@ -18,6 +18,8 @@ public interface NewsDao {
 
     public List<News> findNewNews();
 
+    public List<News> findClickNews();
+
     public List<News> findHotNews();
 
     public List<News> findNewsByType(int typeId);

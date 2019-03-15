@@ -41,6 +41,11 @@ public class NewsDaoImpl implements NewsDao {
         String sql="select * from news order by publish_date desc limit 0,8 ";
         return getNewsList(sql);
     }
+    @Override
+    public List<News> findClickNews() {
+        String sql="select * from news  order by click desc limit 0,8 ";
+        return getNewsList(sql);
+    }
 
     @Override
     public List<News> findHotNews() {

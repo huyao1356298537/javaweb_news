@@ -1,16 +1,3 @@
-<%@ page import="com.zr.news.service.NewsService" %>
-<%@ page import="com.zr.news.entity.News" %>
-<%@ page import="java.util.List" %>
-<%@ page import="com.zr.news.service.NewsTypeService" %>
-<%@ page import="com.zr.news.entity.NewsType" %>
-<%@ page import="com.zr.news.util.DateUtil" %>
-<%@ page import="java.sql.DriverManager" %><%--
-  Created by IntelliJ IDEA.
-  User: Administrator
-  Date: 2019/3/8
-  Time: 17:06
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -41,7 +28,7 @@
                            <c:if test="${news.typeId==type.typeId }">
                                <div class="col-md-4">
                                <div class="data_list news_list">
-                               <div class="dataHeader">${type.typeName}<span class="more"><a href="#?${type.typeId}">更多...</a></span></div>
+                               <div class="dataHeader">${type.typeName}<span class="more"><a href="NewsServlet?action=query&typeId=${type.typeId}">更多...</a></span></div>
                                <div class="datas">
                                <ul>
                            </c:if>
@@ -75,19 +62,5 @@
 <script src="<%=request.getContextPath() %>/static/js/jquery.min.js"></script>
 <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
 <script src="<%=request.getContextPath() %>/bootstrap/js/bootstrap.min.js"></script>
-<script>
-    $(function(){
-        var nav = document.getElementsByClassName("nav")[0];
-        var olis = nav.getElementsByTagName("li");
-        for (var i=0; i<olis.length;i++){
-            olis[i].onclick=function (ev) {
-                for (var j = 0; j <olis.length ; j++) {
-                    olis[j].className="";
-                }
-                this.className="active";
-            }
-        }
-    })
-</script>
 
 </html>

@@ -39,6 +39,9 @@ public class NewsService {
     public List<News> findNewNews(){
         return  dao.findNewNews();
     }
+    public List<News> findClickNews(){
+        return  dao.findClickNews();
+    }
 
 
     public List<News> findHotNews(){
