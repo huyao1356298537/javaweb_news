@@ -1,6 +1,7 @@
 package com.zr.news.dao;
 
 import com.zr.news.entity.News;
+import com.zr.news.entity.PageBean;
 
 import java.util.List;
 
@@ -23,5 +24,17 @@ public interface NewsDao {
     public List<News> findHotNews();
 
     public List<News> findNewsByType(int typeId);
+
+    public List<News> findNewsListByType(int typeId, PageBean pageBean);
+
+    public int findNewsCountByType(int typeId);
+
+    public News findNewsById(int newsId);
+
+    public News findUpNewsById(int newsId);
+
+    public News findDownNewsById(int newsId);
+
+    public void addClick(int newsId);
 
 }

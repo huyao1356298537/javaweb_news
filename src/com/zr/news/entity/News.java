@@ -18,6 +18,7 @@ public class News {
     private String imageUrl;
     private int click;
     private int isHot;
+    private String typeName;
 
 
     public News(int newsId, String title, String context, String author, int typeId, Date publishDate, int isImage, String imageUrl, int click, int isHot) {
@@ -33,7 +34,32 @@ public class News {
         this.isHot = isHot;
     }
 
+    @Override
+    public String toString() {
+        return "News{" +
+                "newsId=" + newsId +
+                ", title='" + title + '\'' +
+                ", context='" + context + '\'' +
+                ", author='" + author + '\'' +
+                ", typeId=" + typeId +
+                ", publishDate=" + publishDate +
+                ", isImage=" + isImage +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", click=" + click +
+                ", isHot=" + isHot +
+                ", typeName='" + typeName + '\'' +
+                '}';
+    }
+
     public News() {
+    }
+
+    public String getTypeName() {
+        return typeName;
+    }
+
+    public void setTypeName(String typeName) {
+        this.typeName = typeName;
     }
 
     public int getNewsId() {

@@ -137,3 +137,22 @@ a{
     height: 240px;
     margin: 15px 0px 8px 0px;
 }
+#newsListNav{
+    font-weight: bold !important;
+}
+.data_list .type_news_list ul li{
+    font-size: large !important;
+    margin-bottom: 10px;
+}
+.datas .news_title{
+    text-align: center;
+}
+.datas .news_info{
+    text-align: center;
+}
+.datas .news_content{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+
+}

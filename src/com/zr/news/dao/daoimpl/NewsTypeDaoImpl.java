@@ -50,4 +50,36 @@ public class NewsTypeDaoImpl implements NewsTypeDao {
         }
         return list;
     }
+    @Override
+    public NewsType findTypeById(int id) {
+        NewsType newsType =  new NewsType();
+        String sql="select * from news_type where type_id=?";
+        PreparedStatement ps=null;
+        ResultSet rs = null;
+        try {
+            Connection connection = JdbcUtils.getConnection();
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1,id);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                int typeId = rs.getInt("type_id");
+                String typeName = rs.getString("type_name");
+                newsType.setTypeId(typeId);
+                newsType.setTypeName(typeName);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if(rs!=null)
+                   rs.close();
+                if(ps!=null)
+                    ps.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            JdbcUtils.close();
+        }
+        return newsType;
+    }
 }

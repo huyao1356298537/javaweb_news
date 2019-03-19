@@ -2,6 +2,7 @@ package com.zr.news.dao.daoimpl;
 
 import com.zr.news.dao.NewsDao;
 import com.zr.news.entity.News;
+import com.zr.news.entity.PageBean;
 import com.zr.news.framework.JdbcUtils;
 
 import java.sql.*;
@@ -13,6 +14,177 @@ import java.util.List;
  * date : 2019/3/11
  */
 public class NewsDaoImpl implements NewsDao {
+
+
+    public void addClick(int newsId){
+
+        String sql ="update news set click = click+1 where  news_id = ?";
+        PreparedStatement ps=null;
+        ResultSet rs = null;
+        try {
+            Connection connection = JdbcUtils.getConnection();
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1,newsId);
+            int i = ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            JdbcUtils.close();
+        }
+    }
+
+    public News findDownNewsById(int id){
+        String sql="select * from news where publish_date<(select publish_date from news where news_id=?)  order by publish_date DESC limit 1;\n";
+        News news =  new News();
+
+        PreparedStatement ps=null;
+        ResultSet rs = null;
+        try {
+            Connection connection = JdbcUtils.getConnection();
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1,id);
+            rs = ps.executeQuery();
+            while (rs.next()){
+                news.setNewsId(rs.getInt("news_id"));
+                news.setTitle(rs.getString("title"));
+                news.setContext(rs.getString("context"));
+                news.setAuthor(rs.getString("author"));
+                news.setTypeId(rs.getInt("type_id"));
+                news.setPublishDate(rs.getDate("publish_date"));
+                news.setIsImage(rs.getInt("is_image"));
+                news.setImageUrl(rs.getString("image_url"));
+                news.setClick(rs.getInt("click"));
+                news.setIsHot(rs.getInt("is_hot"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if(rs!=null)
+                    rs.close();
+                if(ps!=null)
+                    ps.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            JdbcUtils.close();
+        }
+        return news;
+    }
+    public News findUpNewsById(int id){
+        String sql="select * from news where publish_date>(select publish_date from news where news_id=?)  order by publish_date asc limit 1;\n";
+        News news =  new News();
+
+        PreparedStatement ps=null;
+        ResultSet rs = null;
+        try {
+            Connection connection = JdbcUtils.getConnection();
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1,id);
+            rs = ps.executeQuery();
+            while (rs.next()){
+                news.setNewsId(rs.getInt("news_id"));
+                news.setTitle(rs.getString("title"));
+                news.setContext(rs.getString("context"));
+                news.setAuthor(rs.getString("author"));
+                news.setTypeId(rs.getInt("type_id"));
+                news.setPublishDate(rs.getDate("publish_date"));
+                news.setIsImage(rs.getInt("is_image"));
+                news.setImageUrl(rs.getString("image_url"));
+                news.setClick(rs.getInt("click"));
+                news.setIsHot(rs.getInt("is_hot"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if(rs!=null)
+                    rs.close();
+                if(ps!=null)
+                    ps.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            JdbcUtils.close();
+        }
+        return news;
+    }
+    public News findNewsById(int id){
+        String sql="select n.*,t.type_name from news n, news_type  t  where n.type_id = t.type_id and news_id=?";
+        News news =  new News();
+
+        PreparedStatement ps=null;
+        ResultSet rs = null;
+        try {
+            Connection connection = JdbcUtils.getConnection();
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1,id);
+            rs = ps.executeQuery();
+            while (rs.next()){
+                news.setNewsId(rs.getInt("news_id"));
+                news.setTitle(rs.getString("title"));
+                news.setContext(rs.getString("context"));
+                news.setAuthor(rs.getString("author"));
+                news.setTypeId(rs.getInt("type_id"));
+                news.setPublishDate(rs.getDate("publish_date"));
+                news.setIsImage(rs.getInt("is_image"));
+                news.setImageUrl(rs.getString("image_url"));
+                news.setClick(rs.getInt("click"));
+                news.setIsHot(rs.getInt("is_hot"));
+                news.setTypeName(rs.getString("type_name"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if(rs!=null)
+                    rs.close();
+                if(ps!=null)
+                    ps.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            JdbcUtils.close();
+        }
+        return news;
+    }
+
+
+    @Override
+    public int findNewsCountByType(int typeId) {
+        String sql="select count(*)  count from news where type_id=?";
+        PreparedStatement ps=null;
+        ResultSet rs = null;
+        try {
+            Connection connection = JdbcUtils.getConnection();
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1,typeId);
+            rs = ps.executeQuery();
+            while (rs.next()){
+                int count = rs.getInt("count");
+               return  count;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if(rs!=null)
+                    rs.close();
+                if(ps!=null)
+                    ps.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            JdbcUtils.close();
+        }
+        return 0;
+    }
+
+    @Override
+    public List<News> findNewsListByType(int typeId, PageBean pageBean) {
+        String sql="select * from news where type_id="+typeId+" order by publish_date desc limit "+pageBean.getIndex()+","+pageBean.getPageCount();
+        return  getNewsList(sql);
+    }
     @Override
     public List<News> findNewsByType(int typeId) {
         String sql="select * from news where type_id="+typeId+" order by publish_date desc limit 0,8";
@@ -91,7 +263,6 @@ public class NewsDaoImpl implements NewsDao {
         }
         return list;
     }
-
 }
 
 
