@@ -14,6 +14,11 @@ public interface NewsTypeDao {
 
     public NewsType findTypeById(int typeId);
 
+    public int addNewsType(NewsType newsType);
+
+    public int deleteNewsType(int id);
+
+    public int updateNewsType(NewsType newsType);
 
 
 }

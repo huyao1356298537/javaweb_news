@@ -14,8 +14,8 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
-    <link rel="stylesheet" href="../static/css/font.css">
-    <link rel="stylesheet" href="../static/css/xadmin.css">
+    <link rel="stylesheet" href="../../static/css/font.css">
+    <link rel="stylesheet" href="../../static/css/xadmin.css">
 </head>
 <body>
 <div class="x-body layui-anim layui-anim-up">
@@ -108,7 +108,7 @@
                 <th>xxx版本</th>
                 <td>1.0.180420</td>
                 <td width="500px" rowspan="10">
-                    <iframe height="500px"width="500px" src='html/ball.html' frameborder="0" scrolling="yes" class="x-iframe"></iframe>
+                    <iframe height="500px" width="500px" src='../html/ball.html' frameborder="0" scrolling="yes" class="x-iframe"></iframe>
                 </td>
                 </tr>
                 <tr>

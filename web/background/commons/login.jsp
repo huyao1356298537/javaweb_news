@@ -14,12 +14,13 @@
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
 
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="../static/css/font.css">
-    <link rel="stylesheet" href="../static/css/xadmin.css">
-    <script type="text/javascript" src="../static/js/jquery.min.js"></script>
-    <script src="../static/layui/layui.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="../../static/css/font.css">
+    <link rel="stylesheet" href="../../static/css/xadmin.css">
+    <script type="text/javascript" src="../../static/js/jquery.min.js"></script>
+    <script src="../../static/layui/layui.js" charset="utf-8"></script>
+    <script src="../../static/js/xadmin.js"></script>
 </head>
 <body class="login-bg">
 

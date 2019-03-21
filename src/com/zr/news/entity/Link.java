@@ -52,8 +52,7 @@ public class Link {
         this.linkOrder = linkOrder;
     }
 
-    public Link(int linkId, String linkName, String email, String linkUrl, int linkOrder) {
-        this.linkId = linkId;
+    public Link( String linkName, String email, String linkUrl, int linkOrder) {
         this.linkName = linkName;
         this.email = email;
         this.linkUrl = linkUrl;
@@ -61,5 +60,13 @@ public class Link {
     }
 
     public Link() {
+    }
+
+    public Link(int linkId, String linkName, String email, String linkUrl, int linkOrder) {
+        this.linkId = linkId;
+        this.linkName = linkName;
+        this.email = email;
+        this.linkUrl = linkUrl;
+        this.linkOrder = linkOrder;
     }
 }
