@@ -1,6 +1,7 @@
 package com.zr.news.dao;
 
 import com.zr.news.entity.Comment;
+import com.zr.news.entity.PageBean;
 
 import java.util.List;
 
@@ -14,4 +15,9 @@ public interface CommentDao {
 
     public List<Comment> queryByNewsId(int newsId);
 
+    public List<Comment> queryAll();
+
+    public List<Comment> queryByPage(PageBean pageBean);
+
+    public int deleteComent(int id);
 }

@@ -2,6 +2,7 @@ package com.zr.news.dao.daoimpl;
 
 import com.zr.news.dao.CommentDao;
 import com.zr.news.entity.Comment;
+import com.zr.news.entity.PageBean;
 import com.zr.news.framework.JdbcUtils;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
@@ -39,5 +40,42 @@ public class CommentDaoImpl implements CommentDao {
             e.printStackTrace();
         }
         return null;
+    }
+    @Override
+    public List<Comment> queryAll() {
+
+        String sql="select * from comment";
+        try {
+            List<Comment> commentList = qr.query(JdbcUtils.getConnection(),sql, new BeanListHandler<>(Comment.class));
+            return commentList;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public List<Comment> queryByPage(PageBean pageBean) {
+        String sql="select c.* ,n.title title from comment c,news n where c.news_id=n.news_id limit ?,?";
+        try {
+            List<Comment> commentList = qr.query(JdbcUtils.getConnection(),sql,
+                    new BeanListHandler<>(Comment.class),pageBean.getIndex(),pageBean.getPageCount());
+            return commentList;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public int deleteComent(int id) {
+
+        String sql="delete from comment where c_id=? ";
+        try {
+            return  qr.update(JdbcUtils.getConnection(),sql,id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 }

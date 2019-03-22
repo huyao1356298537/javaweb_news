@@ -20,7 +20,7 @@
 <body>
 <div class="x-body layui-anim layui-anim-up">
     <blockquote class="layui-elem-quote">欢迎管理员：
-        <span class="x-red">test</span>！当前时间:2018-04-25 20:50:53</blockquote>
+        <span class="x-red">${username}</span>！当前时间:${currentDate}</blockquote>
     <fieldset class="layui-elem-field">
         <legend>数据统计</legend>
         <div class="layui-field-box">
@@ -34,42 +34,42 @@
                                         <a href="javascript:;" class="x-admin-backlog-body">
                                             <h3>文章数</h3>
                                             <p>
-                                                <cite>108</cite></p>
+                                                <cite>${newsListCount}</cite></p>
                                         </a>
                                     </li>
                                     <li class="layui-col-xs2">
                                         <a href="javascript:;" class="x-admin-backlog-body">
-                                            <h3>类别</h3>
+                                            <h3>新闻类别</h3>
                                             <p>
-                                                <cite>6</cite></p>
+                                                <cite>${newsTypeListCount}</cite></p>
                                         </a>
                                     </li>
                                     <li class="layui-col-xs2">
                                         <a href="javascript:;" class="x-admin-backlog-body">
-                                            <h3>评论数</h3>
+                                            <h3>评论总数</h3>
                                             <p>
-                                                <cite>299</cite></p>
+                                                <cite>${commentListCount}</cite></p>
                                         </a>
                                     </li>
                                     <li class="layui-col-xs2">
                                         <a href="javascript:;" class="x-admin-backlog-body">
                                             <h3>赞助商家</h3>
                                             <p>
-                                                <cite>67</cite></p>
+                                                <cite>${linkListCount}</cite></p>
                                         </a>
                                     </li>
                                     <li class="layui-col-xs2">
                                         <a href="javascript:;" class="x-admin-backlog-body">
-                                            <h3>今日访问量</h3>
+                                            <h3>点击访问量</h3>
                                             <p>
-                                                <cite>1000</cite></p>
+                                                <cite>${clickSum}</cite></p>
                                         </a>
                                     </li>
                                     <li class="layui-col-xs2">
                                         <a href="javascript:;" class="x-admin-backlog-body">
-                                            <h3>访问ip总数</h3>
+                                            <h3>评论IP</h3>
                                             <p>
-                                                <cite>500</cite></p>
+                                                <cite>${ipCount}</cite></p>
                                         </a>
                                     </li>
                                 </ul>
@@ -105,8 +105,8 @@
             <table class="layui-table">
                 <tbody>
                 <tr>
-                <th>xxx版本</th>
-                <td>1.0.180420</td>
+                <th>天天新闻版本</th>
+                <td>1.0.1000</td>
                 <td width="500px" rowspan="10">
                     <iframe height="500px" width="500px" src='../html/ball.html' frameborder="0" scrolling="yes" class="x-iframe"></iframe>
                 </td>

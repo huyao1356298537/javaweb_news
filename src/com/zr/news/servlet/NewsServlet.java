@@ -54,7 +54,6 @@ public class NewsServlet extends HttpServlet {
             request.setAttribute("mainJsp","newInfo.jsp");
             request.getRequestDispatcher("/foreground/newModel.jsp").forward(request,response);
         }
-
     }
 
     private void query(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

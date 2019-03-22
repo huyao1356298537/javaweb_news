@@ -11,6 +11,7 @@ public class Comment {
 
     private int cId;
     private int newsId;
+    private String title;
     private String content;
     private String ipAddr;
     private Date commentDate;
@@ -25,11 +26,19 @@ public class Comment {
     public Comment() {
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public int getcId() {
         return cId;
     }
 
-    public void setcId(int cId) {
+    public void setc_id(int cId) {
         this.cId = cId;
     }
 
@@ -37,7 +46,7 @@ public class Comment {
         return newsId;
     }
 
-    public void setNewsId(int newsId) {
+    public void setNews_id(int newsId) {
         this.newsId = newsId;
     }
 

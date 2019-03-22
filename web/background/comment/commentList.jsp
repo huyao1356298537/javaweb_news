@@ -32,48 +32,30 @@
     <table class="layui-hide" id="tab" lay-filter="test"></table>
 
     <script type="text/html" id="barDemo">
-        <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+    </script>
+    <script type="text/html" id="loginTime">
+        {{ dateFormat(d.commentDate) }}
     </script>
 </div>
 <script>
     layui.use('table', function(){
         var table = layui.table;
-
         table.render({
             elem: '#tab'
             // Servlet 返回一个json字符串
             ,url:'<%=request.getContextPath()%>/CommentServlet?action=query'
             ,title: '新闻评论表'
             ,cols: [[
-                {type: 'checkbox', fixed: 'left'}
-                ,{field:'typeId', title:'ID', width:'10%', fixed: 'left', unresize: true, sort: true}
-                ,{field:'title', title:'新闻标题', width:'20%'}
-                ,{field:'newsId', hidden:true, title:'新闻id'}
+                {field:'cId', title:'ID', width:'5%', fixed: 'left', unresize: true, sort: true}
+                ,{field:'newsId', title:'新闻ID',width:'5%',sort: true}
+                ,{field:'title', title:'新闻标题', width:'20%',sort: true}
                 ,{field:'content', title:'评论内容', width:'20%'}
-                ,{field:'ipAddr', title:'IP地址', width:'20%'}
-                ,{field:'commentDate', title:'日期', width:'20%'}
+                ,{field:'ipAddr', title:'IP地址', width:'20%',sort: true}
+                ,{field:'commentDate', title:'日期', width:'20%',templet: '#loginTime',sort: true}
                 ,{fixed: 'right', title:'操作', toolbar: '#barDemo'}
             ]]
             ,page: true
-        });
-
-        //头工具栏事件
-        table.on('toolbar(test)', function(obj){
-            var checkStatus = table.checkStatus(obj.config.id);
-            switch(obj.event){
-                case 'getCheckData':
-                    var data = checkStatus.data;
-                    layer.alert(JSON.stringify(data));
-                    break;
-                case 'getCheckLength':
-                    var data = checkStatus.data;
-                    layer.msg('选中了：'+ data.length + ' 个');
-                    break;
-                case 'isAll':
-                    layer.msg(checkStatus.isAll ? '全选': '未全选');
-                    break;
-            };
         });
 
         //监听行工具事件
@@ -86,32 +68,18 @@
                     layer.close(index);
                     $.ajax({
                         type:"post",
-                        url:"<%=request.getContextPath()%>/NewsTypeServlet",
-                        data:"action=delete&typeId="+data.typeId,
+                        url:"<%=request.getContextPath()%>/CommentServlet",
+                        data:"action=delete&id="+data.cId,
                         success:function(msg){
-
-                            /*
-                               删除分类时，可以直接删除吗？不可以，因为分类下可能有信息
-                            */
-                            var rc = eval("("+msg+")");
-                            if(rc.code=="2003"){
-                                layer.msg(rc.message,{icon:2,time:2000});
+                            obj.del();
+                            if(msg=="1"){
+                                layer.msg("删除成功",{icon:1,time:1000});
                             }else{
                                 //发异步删除数据
-                                obj.del();
-                                layer.msg(rc.message,{icon:1,time:1000});
+                                layer.msg("删除失败或已删除",{icon:2,time:1000});
                             }
                         }
                     });
-                });
-            } else if(obj.event === 'edit'){
-                layer.open({
-                    title: "新闻类型修改",
-                    scrollbar:false,
-                    type: 2,
-                    skin: 'layui-layer-rim', //加上边框
-                    area: ['620px', '540px'], //宽高
-                    content: 'http://www.baidu.com'
                 });
             }
         });

@@ -1,14 +1,15 @@
 package com.zr.news.servlet;
 
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.zr.news.dao.NewsDao;
 import com.zr.news.dao.NewsTypeDao;
 import com.zr.news.dao.daoimpl.NewsDaoImpl;
 import com.zr.news.dao.daoimpl.NewsTypeDaoImpl;
 import com.zr.news.entity.NewsType;
+import com.zr.news.entity.PageBean;
 import com.zr.news.entity.ResultCode;
 import com.zr.news.service.NewsTypeService;
+import com.zr.news.util.JsonUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -45,7 +46,6 @@ public class NewsTypeServlet extends HttpServlet {
         }else if("queryOne".equals(action)){
             queryOne(request,response);
         }
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -54,22 +54,31 @@ public class NewsTypeServlet extends HttpServlet {
 
 
     protected void query(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<NewsType> typeList = service.findAll();
-        JSONArray jsonArr = (JSONArray)JSONArray.toJSON(typeList);
 
-        JSONObject array=new JSONObject();
-        array.put("code",0);
-        array.put("msg","");
-        array.put("count",typeList.size());
-        array.put("data",jsonArr);
+        String page = request.getParameter("page");
+        String limit = request.getParameter("limit");
+
+        PageBean pageBean = new PageBean();
+        pageBean.setPageIndex(Integer.parseInt(page));
+        pageBean.setPageCount(Integer.parseInt(limit));
+        pageBean.setCount(service.findAll().size());
+
+        List<NewsType> typeList = service.queryByPage(pageBean);
+        JSONObject array = JsonUtil.getJsonObject(typeList,pageBean);
         response.getWriter().print(array);
 
     }
 
     protected void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String newsType = request.getParameter("newsType");
+        NewsTypeDao dao = new NewsTypeDaoImpl();
+        int i = dao.addNewsType(new NewsType(newsType));
+        response.getWriter().print(i);
     }
 
     protected void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+
     }
 
     protected void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

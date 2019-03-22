@@ -1,6 +1,7 @@
 package com.zr.news.dao;
 
 import com.zr.news.entity.NewsType;
+import com.zr.news.entity.PageBean;
 
 import java.util.List;
 
@@ -20,5 +21,5 @@ public interface NewsTypeDao {
 
     public int updateNewsType(NewsType newsType);
 
-
+    public List<NewsType> queryByPage(PageBean pageBean);
 }

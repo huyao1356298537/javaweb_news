@@ -40,7 +40,7 @@
 
 <script>
     $(function  () {
-        layui.use('form', function(){
+        layui.use('form', function(index){
             var form = layui.form;
             form.verify({
                 username: function(value, item){ //value：表单的值、item：表单的DOM对象
@@ -48,7 +48,6 @@
                         return '用户名字母开头，允许5-16字节，允许字母数字下划线';
                     }
                 }
-
                 //我们既支持上述函数式的方式，也支持下述数组的形式
                 //数组的两个值分别代表：[正则匹配、匹配不符时的提示文字]
                 ,password: [
@@ -67,6 +66,13 @@
                            layer.msg(obj.message,function(){
                                location.href='backgroundIndex.jsp'
                            })
+                          if(${username!=null}){
+                              // 获得frame索引
+                              var index = parent.layer.getFrameIndex(window.name);
+                              //关闭当前frame
+                              parent.layer.close(index);
+                              window.parent.location.reload();
+                          }
                        }else{
                            layer.msg(obj.message);
                        }

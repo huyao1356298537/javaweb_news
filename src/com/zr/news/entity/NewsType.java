@@ -9,6 +9,10 @@ public class NewsType {
     private int typeId;
     private String typeName;
 
+    public NewsType(String newsType) {
+        this.typeName = typeName;
+    }
+
     public int getTypeId() {
         return typeId;
     }

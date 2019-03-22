@@ -2,6 +2,7 @@ package com.zr.news.dao.daoimpl;
 
 import com.zr.news.dao.NewsTypeDao;
 import com.zr.news.entity.NewsType;
+import com.zr.news.entity.PageBean;
 import com.zr.news.framework.JdbcUtils;
 import org.apache.commons.dbutils.QueryRunner;
 
@@ -122,6 +123,44 @@ public class NewsTypeDaoImpl implements NewsTypeDao {
             e.printStackTrace();
         }
         return 0;
+    }
+
+    @Override
+    public List<NewsType> queryByPage(PageBean pageBean) {
+        List<NewsType> list = new ArrayList<>();
+
+        String sql="select * from news_type limit ?,?  ";
+        PreparedStatement ps=null;
+        ResultSet rs = null;
+        try {
+            Connection connection = JdbcUtils.getConnection();
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1,pageBean.getIndex());
+            ps.setInt(2,pageBean.getPageCount());
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                int typeId = rs.getInt("type_id");
+                String typeName = rs.getString("type_name");
+
+                NewsType newsType =  new NewsType();
+                newsType.setTypeId(typeId);
+                newsType.setTypeName(typeName);
+                list.add(newsType);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if(rs!=null)
+                    rs.close();
+                if(ps!=null)
+                    ps.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            JdbcUtils.close();
+        }
+        return list;
     }
 
 }
