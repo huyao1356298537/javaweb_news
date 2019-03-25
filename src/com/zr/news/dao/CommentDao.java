@@ -6,7 +6,7 @@ import com.zr.news.entity.PageBean;
 import java.util.List;
 
 /**
- * @author : 张晋飞
+ * @author : huyao
  * date : 2019/3/19
  */
 public interface CommentDao {
@@ -20,4 +20,6 @@ public interface CommentDao {
     public List<Comment> queryByPage(PageBean pageBean);
 
     public int deleteComent(int id);
+
+    public int deleteComentByNews(int newId);
 }

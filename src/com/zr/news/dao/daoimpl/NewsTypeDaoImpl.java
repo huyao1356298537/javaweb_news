@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author : 张晋飞
+ * @author : huyao
  * date : 2019/3/11
  */
 public class NewsTypeDaoImpl implements NewsTypeDao {

@@ -6,7 +6,7 @@ import com.zr.news.entity.PageBean;
 import java.util.List;
 
 /**
- * @author : 张晋飞
+ * @author : huyao
  * date : 2019/3/11
  */
 public interface NewsDao {
@@ -37,4 +37,12 @@ public interface NewsDao {
 
     public void addClick(int newsId);
 
+    int addNews(News news);
+
+
+    List<News> queryPage(PageBean pageBean);
+
+    int delete(String newsId);
+
+    int updateNews(News news);
 }

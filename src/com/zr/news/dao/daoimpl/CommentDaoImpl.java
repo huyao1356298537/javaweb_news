@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
- * @author : 张晋飞
+ * @author : huyao
  * date : 2019/3/19
  */
 public class CommentDaoImpl implements CommentDao {
@@ -73,6 +73,18 @@ public class CommentDaoImpl implements CommentDao {
         String sql="delete from comment where c_id=? ";
         try {
             return  qr.update(JdbcUtils.getConnection(),sql,id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    @Override
+    public int deleteComentByNews(int newId) {
+
+        String sql="delete from comment where news_id=? ";
+        try {
+            return  qr.update(JdbcUtils.getConnection(),sql,newId);
         } catch (SQLException e) {
             e.printStackTrace();
         }

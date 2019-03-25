@@ -8,7 +8,7 @@ import org.apache.commons.dbutils.handlers.BeanHandler;
 import java.sql.SQLException;
 
 /**
- * @author : 张晋飞
+ * @author : huyao
  * date : 2019/3/19
  */
 public class UserDaoImpl {

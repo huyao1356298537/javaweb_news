@@ -7,7 +7,7 @@
 <div class="row">
     <div class="col-md-9">
         <!-- Carousel  start -->
-        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="1000">
             <!-- 轮播（Carousel）指标 -->
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -26,17 +26,19 @@
                         <c:if test="${index.first}">
                             <div class="item active">
                                 <a href="NewsServlet?action=queryOne&newsId=${imageNews.newsId}">
-                                    <img src="<%=request.getContextPath()%>/newsImg/${imageNews.imageUrl}"
+                                    <img src="/${imageNews.imageUrl}"
                                                             alt="${imageNews.title}"
-                                                            title="11${imageNews.title}"></a>
+                                                            title="${imageNews.title}"></a>
                             </div>
                         </c:if>
+                        <c:if test="${!index.first}">
                             <div class="item ">
                                 <a href="NewsServlet?action=queryOne&newsId=${imageNews.newsId}">
-                                    <img src="<%=request.getContextPath()%>/newsImg/${imageNews.imageUrl}"
+                                    <img src="/${imageNews.imageUrl}"
                                          alt="${imageNews.title}"
-                                         title="22${imageNews.title}"></a>
+                                         title="${imageNews.title}"></a>
                             </div>
+                        </c:if>
                     </c:forEach>
             </div>
             <!-- 轮播（Carousel）导航 -->

@@ -5,7 +5,7 @@ import com.zr.news.dao.daoimpl.CommentDaoImpl;
 import com.zr.news.entity.Comment;
 
 /**
- * @author : 张晋飞
+ * @author : huyao
  * date : 2019/3/19
  */
 public class CommentService {

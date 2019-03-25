@@ -7,7 +7,7 @@ import com.zr.news.entity.PageBean;
 import java.util.List;
 
 /**
- * @author : 张晋飞
+ * @author : huyao
  * date : 2019/3/22
  */
 public class JsonUtil {

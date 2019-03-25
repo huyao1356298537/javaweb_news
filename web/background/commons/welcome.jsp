@@ -20,7 +20,7 @@
 <body>
 <div class="x-body layui-anim layui-anim-up">
     <blockquote class="layui-elem-quote">欢迎管理员：
-        <span class="x-red">${username}</span>！当前时间:${currentDate}</blockquote>
+        <span class="x-red">${username}</span>！登录时间:${currentDate}</blockquote>
     <fieldset class="layui-elem-field">
         <legend>数据统计</legend>
         <div class="layui-field-box">
@@ -87,12 +87,12 @@
                 <tbody>
                 <tr>
                     <td >
-                        <a class="x-a" href="/" target="_blank">新版天天新闻V1.0上线了</a>
+                        <a class="x-a"  target="_blank">新版天天新闻 V1.0上线了</a>
                     </td>
                 </tr>
                 <tr>
                     <td >
-                        <a class="x-a" href="/" target="_blank">联系方式:(1246001152)</a>
+                        <a class="x-a"  target="_blank">联系方式:(1356298537)</a>
                     </td>
                 </tr>
                 </tbody>
@@ -105,11 +105,11 @@
             <table class="layui-table">
                 <tbody>
                 <tr>
-                <th>天天新闻版本</th>
-                <td>1.0.1000</td>
-                <td width="500px" rowspan="10">
-                    <iframe height="500px" width="500px" src='../html/ball.html' frameborder="0" scrolling="yes" class="x-iframe"></iframe>
-                </td>
+                    <th>天天新闻版本</th>
+                    <td>V1.0.1000</td>
+                    <td width="500px" rowspan="10">
+                        <iframe height="500px" width="500px" src='../html/ball.html' frameborder="0" scrolling="yes" class="x-iframe"></iframe>
+                    </td>
                 </tr>
                 <tr>
                     <th>服务器地址</th>
@@ -164,21 +164,12 @@
                 </tr>
                 <tr>
                     <th>开发者</th>
-                    <td>张晋飞(1246001152)</td></tr>
+                    <td>胡瑶(1356298537)</td></tr>
                 </tbody>
             </table>
         </div>
     </fieldset>
     <blockquote class="layui-elem-quote layui-quote-nm">感谢layui,百度Echarts,jquery,本系统由x-admin提供技术支持。</blockquote>
 </div>
-<script>
-    var _hmt = _hmt || [];
-    (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
-</script>
 </body>
 </html>

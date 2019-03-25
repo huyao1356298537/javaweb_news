@@ -1,7 +1,7 @@
 package com.zr.news.entity;
 
 /**
- * @author : 张晋飞
+ * @author : huyao
  * date : 2019/3/18
  */
 public class PageBean {

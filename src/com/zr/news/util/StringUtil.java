@@ -3,7 +3,7 @@ package com.zr.news.util;
 import java.util.regex.Pattern;
 
 /**
- * @author : 张晋飞
+ * @author : huyao
  * date : 2019/3/11
  */
 public class StringUtil {

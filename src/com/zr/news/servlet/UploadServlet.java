@@ -15,7 +15,7 @@ import java.io.PrintWriter;
 import java.util.UUID;
 
 /**
- * @author : 张晋飞
+ * @author : huyao
  * date : 2019/3/22
  */
 @WebServlet(name = "UploadServlet",urlPatterns = "/uploadImage")
@@ -40,7 +40,6 @@ public class UploadServlet extends HttpServlet {
             fileName = uuid+"_"+strArr[strArr.length-1];
         }
 
-        System.out.println("fileName:"+fileName);
         //把文件写到指定路径
         part.write(savePath+"/"+fileName);
 
@@ -51,7 +50,7 @@ public class UploadServlet extends HttpServlet {
         json.put("fileName",fileName);
         json.put("url","http://localhost/"+fileName);
 
-        System.out.println(json);
+        request.getSession().setAttribute("image",fileName);
         out.print(json);
         out.flush();
         out.close();

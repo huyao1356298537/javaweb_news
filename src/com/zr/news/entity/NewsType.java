@@ -1,7 +1,7 @@
 package com.zr.news.entity;
 
 /**
- * @author : 张晋飞
+ * @author : huyao
  * date : 2019/3/11
  */
 public class NewsType {
@@ -9,7 +9,7 @@ public class NewsType {
     private int typeId;
     private String typeName;
 
-    public NewsType(String newsType) {
+    public NewsType(String typeName) {
         this.typeName = typeName;
     }
 

@@ -3,7 +3,7 @@ package com.zr.news.entity;
 import java.util.Date;
 
 /**
- * @author : 张晋飞
+ * @author : huyao
  * date : 2019/3/19
  */
 public class Comment {

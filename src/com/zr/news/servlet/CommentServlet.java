@@ -18,7 +18,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @author : 张晋飞
+ * @author : huyao
  * date : 2019/3/19
  */
 @WebServlet("/CommentServlet")
@@ -26,21 +26,34 @@ public class CommentServlet extends HttpServlet {
 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       request.setCharacterEncoding("utf-8");
-       response.setContentType("text/html;charset=utf-8");
+        request.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=utf-8");
 
         String action = request.getParameter("action");
         if("add".equals(action)){
             add(request, response);
         }else if("query".equals(action)){
             query(request, response);
-        }else{
+        }else if("delete".equals(action)){
             delete(request, response);
+        }else if("deleteAll".equals(action)){
+            deleteAll(request, response);
         }
-
-
     }
-
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doPost(request,response);
+    }
+    protected void deleteAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String ids = request.getParameter("ids");
+        CommentDao dao = new CommentDaoImpl();
+        String[] id = ids.split(",");
+        int sum=0;
+        for (String commentId:id) {
+            int  i = dao.deleteComent(Integer.parseInt(commentId));
+            sum+=i;
+        }
+        response.getWriter().print(""+sum);
+    }
     private void add(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String newsId = request.getParameter("newsId");
         String content = request.getParameter("content");
@@ -51,7 +64,6 @@ public class CommentServlet extends HttpServlet {
         if(i>0){
             // 将对象转为json字符串
             String strjson = JSONObject.toJSONString(comment);
-//          System.out.println(strjson);
             response.getWriter().print(strjson);
         }
     }
@@ -71,9 +83,6 @@ public class CommentServlet extends HttpServlet {
         JSONObject array = JsonUtil.getJsonObject(commentList,pageBean);
         response.getWriter().print(array);
 
-    }
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request,response);
     }
     protected void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");

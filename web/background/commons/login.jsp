@@ -62,41 +62,27 @@
                     data: "username="+data.field.username+"&password="+data.field.password,
                     success: function(msg){
                         var obj = eval("("+msg+")");
-                       if(obj.code=="1001"){
-                           layer.msg(obj.message,function(){
-                               location.href='backgroundIndex.jsp'
-                           })
-                          if(${username!=null}){
-                              // 获得frame索引
-                              var index = parent.layer.getFrameIndex(window.name);
-                              //关闭当前frame
-                              parent.layer.close(index);
-                              window.parent.location.reload();
-                          }
-                       }else{
-                           layer.msg(obj.message);
-                       }
+                        if(obj.code=="1001"){
+                            layer.msg(obj.message,function(){
+                                location.href='backgroundIndex.jsp'
+                            })
+                            if(${username!=null}){
+                                // 获得frame索引
+                                var index = parent.layer.getFrameIndex(window.name);
+                                //关闭当前frame
+                                parent.layer.close(index);
+                                window.parent.location.reload();
+                            }
+                        }else{
+                            layer.msg(obj.message);
+                        }
                     }
                 });
                 return false;
             });
         });
     })
-
-
 </script>
-
-
 <!-- 底部结束 -->
-<script>
-    //百度统计可去掉
-    var _hmt = _hmt || [];
-    (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
-</script>
 </body>
 </html>

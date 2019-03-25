@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
- * @author : 张晋飞
+ * @author : huyao
  * date : 2019/3/11
  */
 public class JdbcUtils {

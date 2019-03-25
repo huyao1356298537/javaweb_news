@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * @author : 张晋飞
+ * @author : huyao
  * date : 2019/3/20
  */
 @WebServlet(name = "LinkServlet",urlPatterns = "/LinkServlet",initParams = {@WebInitParam(name="pageCount",value="5")})
@@ -71,14 +71,13 @@ public class LinkServlet extends HttpServlet {
 
     protected void deleteAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String ids = request.getParameter("ids");
-        System.out.println(ids);
         String[] id = ids.split(",");
         int sum=0;
         for (String linkId:id) {
             int  i = dao.deleteLink(Integer.parseInt(linkId));
             sum+=i;
         }
-       response.getWriter().print(""+sum);
+        response.getWriter().print(""+sum);
     }
 
 

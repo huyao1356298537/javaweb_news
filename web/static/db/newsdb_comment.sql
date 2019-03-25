@@ -1,0 +1,3 @@
+INSERT INTO newsdb.comment (c_id, news_id, content, ip_addr, comment_date) VALUES (2, 105, '人大二次会议圆满成功！', '172.16.4.41', '2019-03-19 16:31:31');
+INSERT INTO newsdb.comment (c_id, news_id, content, ip_addr, comment_date) VALUES (3, 105, '全国两会在在京进行顺利，现在是第二次会议，就经济建设和文化建设讨论激烈', '172.16.4.41', '2019-03-19 16:48:33');
+INSERT INTO newsdb.comment (c_id, news_id, content, ip_addr, comment_date) VALUES (5, 51, '闻所未闻！', '172.16.4.41', '2019-03-19 19:18:29');

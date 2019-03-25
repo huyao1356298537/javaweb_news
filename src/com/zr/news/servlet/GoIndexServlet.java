@@ -16,14 +16,12 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * @author : 张晋飞
+ * @author : huyao
  * date : 2019/3/14
  */
 @WebServlet(name = "GoIndexServlet",urlPatterns = "/goIndex")
 public class GoIndexServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        System.out.println("GoIndexServlet.doPost....");
 
         NewsService newsService = new NewsService();
         NewsTypeService typeService = new NewsTypeService();

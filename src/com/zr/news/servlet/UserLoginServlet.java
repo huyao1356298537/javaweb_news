@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * @author : 张晋飞
+ * @author : huyao
  * date : 2019/3/19
  */
 @WebServlet("/UserLoginServlet")
@@ -31,20 +31,19 @@ public class UserLoginServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
 
-        System.out.println("UserLoginServlet.post.....");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        System.out.println("UserLoginServlet.post....."+username+"======="+password);
         UserDaoImpl dao =  new UserDaoImpl();
         User user = dao.queryOne(username);
         ResultCode rc = null;
         if(user!=null){
             //用户名正确
-          //  rc = new ResultCode("1001","用户名正确");
+            //  rc = new ResultCode("1001","用户名正确");
             if(user.getPassword().equals(password)){
                 //密码正确
                 rc = new ResultCode("1001","登录成功");
-               loginInfo(request,response);
+                request.getSession().setAttribute("currentDate", DateUtil.formatDate(new Date(),"yyyy-MM-dd HH:mm:ss"));
+                loginInfo(request,response);
             }else{
                 //密码不正确
                 rc = new ResultCode("1002","密码不正确");
@@ -87,10 +86,11 @@ public class UserLoginServlet extends HttpServlet {
         session.setAttribute("linkListCount",linkList.size());
         session.setAttribute("clickSum",clickSum);
         session.setAttribute("ipCount",set.size());
-        session.setAttribute("currentDate", DateUtil.formatDate(new Date(),"yyyy-MM-dd HH:mm:ss"));
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request,response);
     }
 }
+
+

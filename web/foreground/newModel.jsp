@@ -55,4 +55,18 @@
         <jsp:include page="commons/footer.jsp"></jsp:include>
 </div>
 </body>
+<script>
+    $(function(){
+        var nav = document.getElementsByClassName("nav")[0];
+        var olis = nav.getElementsByTagName("li");
+        for (var i=0; i<olis.length;i++){
+            olis[i].onmouseover=function (ev) {
+                for (var j = 0; j <olis.length ; j++) {
+                    olis[j].className="";
+                }
+                this.className="active";
+            }
+        }
+    })
+</script>
 </html>

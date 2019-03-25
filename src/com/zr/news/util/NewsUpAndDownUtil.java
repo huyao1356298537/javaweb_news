@@ -5,7 +5,7 @@ import com.zr.news.entity.News;
 import java.util.List;
 
 /**
- * @author : 张晋飞
+ * @author : huyao
  * date : 2019/3/18
  */
 public class NewsUpAndDownUtil {

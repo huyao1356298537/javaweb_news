@@ -1,9 +1,9 @@
-INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (1, '是是安全性，广泛应用于个人PC、数据中心', 'Java是一种可以撰写跨平台应用软件的面向对象的程序设计语言，是由Sun Microsystems公司于1995年5月推出的Java程序设计语言和Java平台（即JavaSE, JavaEE, JavaME）的总称。Java 技术具有卓越的通用性、高效性、平台移植性和安全性，广泛应用于个人PC、数据中心、游戏控制台、科学超级计算机、移动电话和互联网，同时拥有全球最大的开发者专业社群。在全球云计算和移动互联网的产业环境下，Java更具备了显著优势和广阔前景。', '222', 1, '0201-01-01 00:00:00', 1, '4.jpg', 204, 1);
-INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (49, '213啊', '213444我', '21344', 3, '2019-03-04 17:23:44', 1, '2.jpg', 5, 1);
+INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (1, '广泛应用于个人PC、数据中心', 'Java是一种可以撰写跨平台应用软件的面向对象的程序设计语言，是由Sun Microsystems公司于1995年5月推出的Java程序设计语言和Java平台（即JavaSE, JavaEE, JavaME）的总称。Java 技术具有卓越的通用性、高效性、平台移植性和安全性，广泛应用于个人PC、数据中心、游戏控制台、科学超级计算机、移动电话和互联网，同时拥有全球最大的开发者专业社群。在全球云计算和移动互联网的产业环境下，Java更具备了显著优势和广阔前景。', '瑶', 1, '2019-01-01 00:00:00', 1, '1a05404f-eda0-477b-b', 210, 1);
+INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (49, '213啊', '213444我', '瑶', 3, '2019-03-04 17:23:44', 1, '1.jpg', 9, 1);
 INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (50, '汪峰是互联网上名副其实的King', '<p>不知不觉在百度百家写了很多东西了，多得都吓到自己了，主要是一路写到现在，仍然是文笔幼稚、面目可憎，阿弥陀佛，善哉善哉。</p>
 
 <p>处于多年的媒体习惯，写东西对我来说不仅仅是满足一己私欲，同时也想借此了解一下网友们口味，美其名曰趋势、指数、习惯。而在这个过程中我真的发现了一点什么。往下看。（括号里为阅读量）</p>
-', '飞飞', 1, '2019-03-01 15:17:07', 1, '3.jpg', 1, 1);
+', '飞飞', 1, '2019-03-01 15:17:07', 1, '2.jpg', 5, 1);
 INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (51, '马来西亚巫师作法再寻失联飞机：这次更奇葩', '马航客机MH370失联已经进入第六天了，但搜寻依然没有取得突破性的进展。<br />
 此前曾有报道称为了搜寻失联的马航客机，马来西亚不惜用尽各种方法，只要不违反伊斯兰教教义，欢迎任何人参与搜索行动，甚至连马来巫师也不例外。<br />
 著名马来巫师伊布拉欣马今（IbrahimMatZin）曾于前日前往吉隆坡国际机场，以透过灵异力量寻找失踪飞机所在位置。他在吉隆坡国际机场入口处祈祷后表示有两种感觉，即飞机还在空中飞或已坠海，但不会坠落在陆地上。<br />
@@ -12,24 +12,23 @@ INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date,
 <img alt="" src="newsImg/2.jpg" /><br />
 <img alt="" src="newsImg/3.jpg" /><br />
 <img alt="" src="newsImg/4.jpg" /><br />
-<img alt="" src="newsImg/5.jpg" /><br />
-&nbsp;', '飞飞', 2, '2019-03-01 18:54:57', 1, '2.jpg', 18, 1);
-INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (52, '娱乐新闻1', '娱乐新闻1', '飞飞', 1, '2019-03-01 20:41:24', 1, '1.jpg', 0, 1);
-INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (53, '娱乐新闻2', '娱乐新闻2', '飞飞', 1, '2019-03-01 20:41:58', 0, null, 0, 1);
-INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (64, '娱乐新闻3', '娱乐新闻3', '飞飞', 1, '2019-03-01 21:18:17', 0, null, 1, 0);
-INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (65, '娱乐新闻4', '娱乐新闻4', '飞飞', 1, '2019-03-01 21:18:17', 0, null, 0, 0);
+&nbsp;', '飞飞', 2, '2019-03-01 18:54:57', 1, '3.jpg', 27, 1);
+INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (52, '娱乐新闻1', '娱乐新闻1', '飞飞', 1, '2019-03-01 20:41:24', 1, '4.jpg', 2, 1);
+INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (53, '娱乐新闻2', '娱乐新闻2', '飞飞', 1, '2019-03-01 20:41:58', 0, null, 1, 1);
+INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (64, '娱乐新闻3', '娱乐新闻3', '飞飞', 1, '2019-03-01 21:18:17', 0, null, 2, 0);
+INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (65, '娱乐新闻4', '娱乐新闻4', '飞飞', 1, '2019-03-01 21:18:17', 0, null, 2, 0);
 INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (66, '娱乐新闻5', '娱乐新闻5', '飞飞', 1, '2019-03-01 21:18:17', 0, null, 0, 0);
-INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (67, '娱乐新闻6', '娱乐新闻6', '飞飞', 1, '2019-03-01 21:18:17', 0, null, 0, 0);
+INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (67, '娱乐新闻6', '娱乐新闻6', '飞飞', 1, '2019-03-01 21:18:17', 0, null, 2, 0);
 INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (68, '娱乐新闻7', '娱乐新闻7', '飞飞', 1, '2019-03-01 21:18:17', 0, null, 0, 0);
 INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (69, '娱乐新闻8', '娱乐新闻8', '飞飞', 1, '2019-03-01 21:18:17', 0, null, 0, 0);
-INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (71, '政治新闻2', '政治新闻8', '飞飞', 2, '2019-03-01 22:01:56', 0, null, 6, 0);
-INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (72, '政治新闻3', '政治新闻8', '飞飞', 2, '2019-03-01 22:01:56', 0, null, 0, 0);
-INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (73, '政治新闻4', '政治新闻8', '飞飞', 2, '2019-03-01 22:01:56', 0, null, 3, 0);
+INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (71, '政治新闻2', '政治新闻8', '飞飞', 2, '2019-03-01 22:01:56', 0, null, 8, 0);
+INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (72, '政治新闻3', '政治新闻8', '飞飞', 2, '2019-03-01 22:01:56', 0, null, 1, 0);
+INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (73, '政治新闻4', '政治新闻8', '飞飞', 2, '2019-03-01 22:01:56', 0, null, 4, 0);
 INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (74, '政治新闻5', '政治新闻8', '飞飞', 2, '2019-03-01 22:01:56', 0, null, 1, 0);
 INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (75, '政治新闻6', '政治新闻8', '飞飞', 2, '2019-03-01 22:01:56', 0, null, 1, 0);
 INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (76, '政治新闻7', '政治新闻8', '飞飞', 2, '2019-03-01 22:01:56', 0, null, 1, 0);
 INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (77, '政治新闻8', '政治新闻8', '飞飞', 2, '2019-03-01 22:01:56', 0, null, 0, 0);
-INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (78, '经济新闻1', '经济新闻8', '飞飞', 3, '2019-03-01 22:14:56', 0, null, 8, 0);
+INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (78, '经济新闻1', '经济新闻8', '飞飞', 3, '2019-03-01 22:14:56', 0, null, 10, 0);
 INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (79, '经济新闻3', '经济新闻8', '飞飞', 3, '2019-03-01 22:14:56', 0, null, 0, 0);
 INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (80, '经济新闻3', '经济新闻8', '飞飞', 3, '2019-03-01 22:14:56', 0, null, 0, 0);
 INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (81, '经济新闻4', '经济新闻8', '飞飞', 3, '2019-03-01 22:14:56', 0, null, 0, 0);
@@ -37,7 +36,7 @@ INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date,
 INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (83, '经济新闻6', '经济新闻8', '飞飞', 3, '2019-03-01 22:14:56', 0, null, 0, 0);
 INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (84, '经济新闻7', '经济新闻8', '飞飞', 3, '2019-03-01 22:14:56', 0, null, 0, 0);
 INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (85, '经济新闻8', '经济新闻8', '飞飞', 3, '2019-03-01 22:14:56', 0, null, 0, 0);
-INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (86, '文化新闻1', '文化新闻8', '飞飞', 4, '2019-03-01 22:20:38', 0, null, 0, 0);
+INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (86, '文化新闻1', '文化新闻8', '飞飞', 4, '2019-03-01 22:20:38', 0, null, 1, 0);
 INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (87, '文化新闻4', '文化新闻8', '飞飞', 4, '2019-03-01 22:20:38', 0, null, 0, 0);
 INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (88, '文化新闻4', '文化新闻8', '飞飞', 4, '2019-03-01 22:20:38', 0, null, 0, 0);
 INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (89, '文化新闻4', '文化新闻8', '飞飞', 4, '2019-03-01 22:20:38', 0, null, 0, 0);
@@ -45,14 +44,14 @@ INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date,
 INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (91, '文化新闻6', '文化新闻8', '飞飞', 4, '2019-03-01 22:20:38', 0, null, 0, 0);
 INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (92, '文化新闻7', '文化新闻8', '飞飞', 4, '2019-03-01 22:20:38', 0, null, 0, 0);
 INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (93, '文化新闻8', '文化新闻8', '飞飞', 4, '2019-03-01 22:20:38', 0, null, 0, 0);
-INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (94, '小道新闻1', '小道新闻8', '飞飞', 5, '2019-03-01 22:21:03', 0, null, 1, 0);
-INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (95, '小道新闻5', '小道新闻8', '飞飞', 5, '2019-03-01 22:21:03', 0, null, 1, 0);
-INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (96, '小道新闻5', '小道新闻8', '飞飞', 5, '2019-03-01 22:21:03', 0, null, 1, 0);
+INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (94, '小道新闻1', '小道新闻8', '飞飞', 5, '2019-03-01 22:21:03', 0, null, 3, 0);
+INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (95, '小道新闻5', '小道新闻8', '飞飞', 5, '2019-03-01 22:21:03', 0, null, 5, 0);
+INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (96, '小道新闻5', '小道新闻8', '飞飞', 5, '2019-03-01 22:21:03', 0, null, 6, 0);
 INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (97, '小道新闻5', '小道新闻8', '飞飞', 5, '2019-03-01 22:21:03', 0, null, 1, 0);
 INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (98, '小道新闻5', '小道新闻8', '飞飞', 5, '2019-03-01 22:21:03', 0, null, 1, 0);
 INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (99, '小道新闻6', '小道新闻8', '飞飞', 5, '2019-03-01 22:21:03', 0, null, 1, 0);
-INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (100, '小道新闻7', '小道新闻8', '飞飞', 5, '2019-03-01 22:21:03', 0, null, 1, 0);
-INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (101, '小道新闻8', '小道新闻8', '飞飞', 5, '2019-03-01 22:21:03', 0, null, 1, 0);
+INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (100, '小道新闻7', '小道新闻8', '飞飞', 5, '2019-03-01 22:21:03', 0, '<null>', 1, 0);
+INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (101, '小道新闻8', '小道新闻8', '飞飞', 5, '2019-03-01 22:21:03', 0, '<null>', 1, 0);
 INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (102, '西安幼儿园被指近3年都给孩子吃过药', '<p>&nbsp;</p>
 <img alt="西安幼儿园被指近3年都给孩子吃过药" src="http://img1.gtimg.com/news/pics/hv1/5/34/1542/100277225.jpg" />
 <p>&nbsp;</p>
@@ -148,20 +147,14 @@ INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date,
 <p>经查，黄林侠目前只能提供一张广东省发的医师资格证的复印件，但按照规定，从业医师必须在从业机构所在地的卫生部门注册后，才有医师资格。据查，黄林侠并没有在雁塔区注册，所以，黄林侠没有给幼儿开处方药的资质，而&ldquo;病毒灵&rdquo;就属于处方药。</p>
 
 <p>3月10日，不需要任何处方等凭证，记者在含光北路一家药店轻松购买了一瓶&ldquo;病毒灵&rdquo;，处方药是否一定要凭处方购买呢?西安交大二附院儿科教授侯伟表示，按照规定，处方药必须凭借医生处方去药店或医院购买，但在实际中，药店执行不严格，没有处方也能买到处方药。</p>
-', '飞飞', 4, '2019-03-01 23:00:11', 1, '1.jpg', 6, 1);
-INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (103, '昆明火车站暴恐案直击:暴徒见人就砍现场混乱血腥', '<img alt="" src="newsImg/1.jpg" /><br />
+', '飞飞', 5, '2019-03-01 23:00:11', 1, '4.jpg', 15, 1);
+INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (103, '昆明火车站暴恐案直击:暴徒见人就砍现场混乱血腥', '<img alt="" src="newsImg/2.jpg" /><br />
 <br />
-　3月1日晚拍摄的昆明火车站一售票大厅外散落的行李INSERT INTO t_news VALUES(手机拍摄)。3月1日晚9时20分，10余名统一着装的暴徒蒙面持刀在云南昆明火车站广场、售票厅等处砍杀无辜群众，截至3月2日1时，暴力案件已造成28名群众遇难、11名群众受伤。公安干警当场击毙5名暴徒，其余暴徒仍在围捕中。新华社记者蔺以光摄<br />
-<br />
-　　昆明火车站暴力恐怖事件直击<br />
-<br />
-　　新华网北京３月２日新媒体专电INSERT INTO t_news VALUES(新华社&ldquo;中国网事&rdquo;记者)３月１日晚９时２０分，１０余名统一着装的暴徒蒙面持刀在云南昆明火车站广场、售票厅等处砍杀无辜群众，截至３月２日１时，暴力案件已造成２８名群众遇难、１１３名群众受伤。公安干警当场击毙５名暴徒，其余暴徒仍在围捕中。<br />
-<br />
-　　云南省政法委认为，这是一起有组织、有计划、严重暴力恐怖袭击事件，性质极其恶劣，并对后续工作进行迅速安排。<br />
-<br />
-　　暴徒如此残忍，竟在人群密集的车站持刀肆意砍杀无辜群众。人们不禁要问：这些人为什么要这样心狠？<br />
-&nbsp;', '飞飞', 4, '2019-03-01 23:14:48', 1, '2.jpg', 15, 1);
-INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (104, '香港少女穿热裤短裙便利店偷零食被捕2', '<img alt="" src="newsImg/1.jpg" style="height:338px; width:400px" /><br />
+　3月1日晚拍摄的昆明火车站一售票大厅外散落的行李
+INSERT INTO t_news VALUES(手机拍摄)。3月1日晚9时20分，10余名统一着装的暴徒蒙面持刀在云南昆明火车站广场、售票厅等处砍杀无辜群众，截至3月2日1时，暴力案件已造成28名群众遇难、11名群众受伤。公安干警当场击毙5名暴徒，其余暴徒仍在围捕中。新华社记者蔺以光摄<br /><br />昆明火车站暴力恐怖事件直击<br /><br />新华网北京３月２日新媒体专电
+
+INSERT INTO t_news VALUES(新华社&ldquo;中国网事&rdquo;记者)３月１日晚９时２０分，１０余名统一着装的暴徒蒙面持刀在云南昆明火车站广场、售票厅等处砍杀无辜群众，截至３月２日１时，暴力案件已造成２８名群众遇难、１１３名群众受伤。公安干警当场击毙５名暴徒，其余暴徒仍在围捕中。<br /><br />云南省政法委认为，这是一起有组织、有计划、严重暴力恐怖袭击事件，性质极其恶劣，并对后续工作进行迅速安排。<br /><br />暴徒如此残忍，竟在人群密集的车站持刀肆意砍杀无辜群众。人们不禁要问：这些人为什么要这样心狠？<br />&nbsp;', '飞飞', 5, '2019-03-01 23:14:48', 1, '2.jpg', 19, 1);
+INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (104, '习近平参加河南团审议', '<img alt="" src="newsImg/1.jpg" style="height:338px; width:400px" /><br />
 &nbsp;
 <p>　<a href="http://www.chinanews.com/" target="_blank">中新网</a>3月1日电 据香港《文汇报》报道，香港牛头角彩盈鸷发生店铺盗窃案，3名少年男女昨INSERT INTO t_news VALUES(12日)午进入该鸷商场一间便利店，涉嫌扮顾客购物，乘机偷取包括三文治和朱古力饮料等零食，夺门逃走时被职员揭发，警员到场将他们拘捕带署扣查。</p>
 
@@ -173,20 +166,26 @@ INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date,
 	</tbody>
 </table>
 
-<p>　　事发昨下午3时许，一名10余岁少年与2名分别穿热裤和短裙、年龄相若的少女，一同走进彩盈鸷商场一间便利店，在货架和雪柜旁徘徊状似选购货物，其间有人涉嫌从货架和雪柜中偷取包括三文治、花生和纸包朱古力饮品等零食，并收藏在衫袋内欲走向店门离开。但该店职员见他们形迹可疑，早已从旁暗中监视，随即将他们截停以及报警求助。</p>
+<p>&nbsp;</p>
+
+<p>　　事发昨下午3时许，一名10余岁少年与2名分别穿热裤和短裙、年龄相若的少女，一同走进彩盈鸷商场一间便利
+店，在货架和雪柜旁徘徊状似选购货物，其间有人涉嫌从货架和雪柜中偷取包括三文治、花生和纸包朱古力饮品等零食，并收藏在衫袋内欲走向店门离开。但该店职员见他们形迹可疑，早已从旁暗中监视，随即将他们截停以及报警求助。</p>
 
 <p>　　警员接报迅速赶至调查，怀疑3名少年男女涉嫌店铺盗窃，并当场起出赃物，于是将3人拘捕，其间该名少年一度试图发难突围逃走，但终被警员制服，与其余2名少女一并被带署扣查。2</p>
-', '飞飞', 1, '2020-03-14 09:03:35', 1, '3.jpg', 45, 1);
-INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (105, '吊', '是是', '飞飞', 6, '2019-03-14 09:07:38', 0, null, 2, 0);
-INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (106, '张三中了500万', '<p>500万好啊</p>
-', 'cc', 3, '2019-05-22 08:57:49', 1, '4.jpg', 7, 1);
-INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (107, 'fdas', '<p>dasfads</p>
-
-<p>dsa<img alt="" src="newsImg/2.jpg" style="height:431px; width:500px" /></p>
-', 'fda', 1, '2019-05-22 09:00:54', 1, '4.jpg', 1, 0);
-INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (108, '111', '<p>222</p>
-', '2222', 1, '2019-05-26 07:36:31', 0, null, 0, 0);
-INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (109, '2', '<p>2</p>
-', '2', 1, '2019-05-28 07:44:01', 0, null, 0, 0);
-INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (110, '3', '<p>3</p>
-', '3', 1, '2019-05-28 07:50:58', 0, null, 0, 0);
+', '瑶', 1, '2019-03-14 09:03:35', 1, '3.jpg', 54, 1);
+INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (105, '全国两会', '全国两会在在京进行顺利，现在是第二次会议，就经济建设和文化建设讨论激烈', '瑶', 6, '2019-03-14 09:07:38', 0, '<null>', 19, 0);
+INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (106, '张三中了500万', '<p>500万好啊</p>', 'cc', 3, '2018-05-22 08:57:49', 1, '4.jpg', 12, 1);
+INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (107, 'fdas', '<p>dasfads</p><p>dsa<img alt="" src="newsImg/3.jpg" style="height:431px; width:500px" /></p>', 'fda', 1, '2018-05-22 09:00:54', 1, '3.jpg', 4, 0);
+INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (108, '111', '<p>222</p>', '2222', 1, '2018-05-26 07:36:31', 0, null, 1, 0);
+INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (109, '2', '<p>2</p>', '2', 1, '2018-05-28 07:44:01', 0, null, 0, 0);
+INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (110, '3', '<p>3</p>', '3', 1, '2018-05-28 07:50:58', 0, null, 1, 0);
+INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (111, '天蝎座', '<p><img alt="" src="http://localhost/78e47638e52a4c92b525655e53a96d20_1.jpg" style="height:400px; width:470px" /></p>
+', 'yaoyao', 1, '2019-03-23 05:34:20', 1, 'http://localhost/78e47638e52a4c92b525655e53a96d20_1.jpg', 2, 1);
+INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (112, '夜探蓝林', '<p><img alt="" src="http://localhost/ce099923d167434ba279f0b6ac697d57_2.jpg" style="height:400px; width:500px" /></p>
+', '瑶瑶', 4, '2019-03-23 05:36:00', 1, 'http://localhost/ce099923d167434ba279f0b6ac697d57_2.jpg', 3, 1);
+INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (113, '紫色浪漫', '<p><img alt="" src="http://localhost/604c0ad2267043018e58a487a67fb623_3.jpg" style="height:768px; width:1024px" /></p>
+', '瑶瑶', 4, '2019-03-23 05:36:45', 1, 'http://localhost/604c0ad2267043018e58a487a67fb623_3.jpg', 5, 1);
+INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (114, '水瓶座', '<p><img alt="" src="http://localhost/6baa4c31ed044b48baaf9be4bd6ffc9b_4.jpg" style="height:487px; width:433px" /></p>
+', '瑶瑶', 5, '2019-03-23 05:37:36', 1, 'http://localhost/6baa4c31ed044b48baaf9be4bd6ffc9b_4.jpg', 4, 1);
+INSERT INTO newsdb.news (news_id, title, context, author, type_id, publish_date, is_image, image_url, click, is_hot) VALUES (115, 'aaa', '<p><img alt="" src="http://localhost/2462991b09194f798a47c559870ab87e_a.jpg" style="height:300px; width:320px" /></p>
+', 'aa', 1, '2019-03-23 06:05:27', 1, 'http://localhost/2462991b09194f798a47c559870ab87e_a.jpg', 1, 1);
