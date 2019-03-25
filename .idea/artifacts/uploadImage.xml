@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" build-on-make="true" name="uploadImage">
+    <output-path>D:/files/image</output-path>
+    <root id="root">
+      <element id="dir-copy" path="D:/files/image" />
+    </root>
+  </artifact>
+</component>
